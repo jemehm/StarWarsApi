@@ -1,0 +1,13 @@
+h1{
+  text-align: center;
+}
+button{
+    position: absolute;
+    top: 100%;
+    left: 10%;
+}
+.all{
+    position: absolute;
+    top: 15%;
+    left: 40%; 
+}

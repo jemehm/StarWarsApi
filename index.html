@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pokimon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>star wars</h1>
+    <div class="all">
+     <strong>Name:</strong>
+    <div id="name">...</div>
+    <strong>eyecolor:</strong>
+    <div id="eyecolor">...</div>
+    <strong>berthyear:</strong>
+    <div id="berthyear">...</div>
+    <button id="myButton">randomiz</button>
+</div>
+    <script>
+        const name = document.getElementById("name");
+        const eyecolor = document.getElementById("eyecolor");
+        const berthyear = document.getElementById("berthyear");
+       myButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          name.innerHTML = '<em>Loding...</em>'
+          eyecolor.innerHTML = '<em>Loding...</em>'
+          berthyear.innerHTML = '<em>Loding...</em>'
+         
+          const randomNumber = Math.ceil(Math.random() * 83)
+        fetch (`https://swapi.dev/api/people/${randomNumber}/`)
+            .then(response =>response.json())
+            .then(character => {
+                name.innerHTML = character['name'];
+                eyecolor.innerHTML = character['eye_color'];
+                berthyear.innerHTML = character['birth_year'];
+            }) 
+        })
+        
+    </script>
+</body>
+</html>
